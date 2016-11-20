@@ -1,14 +1,16 @@
 package com.student.kevin.drawerlayout;
 
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
     private Button mShowNextPage;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//show back button and make it enabled
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mShowNextPage = (Button) findViewById(R.id.btn_next_page);
+        mShowNextPage.setOnClickListener(this);
 
         mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_layout_open, R.string.drawer_layout_close);
         mActionBarDrawerToggle.setDrawerIndicatorEnabled(true);
@@ -30,5 +33,13 @@ public class MainActivity extends AppCompatActivity {
         mActionBarDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
         mDrawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this,R.color.green));
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId() == R.id.btn_next_page){
+            startActivity(new Intent(MainActivity.this,NextActivity.class));
+        }
     }
 }
