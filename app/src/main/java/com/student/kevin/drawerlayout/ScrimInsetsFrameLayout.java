@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 /**
  * Created by Kevin on 2016/11/17.
  * Blog:http://blog.csdn.net/student9128
- * Description:
+ * Description: this fragmelayout from the internet
  */
 
 public class ScrimInsetsFrameLayout extends FrameLayout {

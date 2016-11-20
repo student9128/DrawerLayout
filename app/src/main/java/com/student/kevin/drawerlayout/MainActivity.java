@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_layout_open, R.string.drawer_layout_close);
         mActionBarDrawerToggle.setDrawerIndicatorEnabled(true);
-        mActionBarDrawerToggle.setHomeAsUpIndicator(R.mipmap.ic_launcher);//改变图标
-        mActionBarDrawerToggle.syncState();
+        mActionBarDrawerToggle.setHomeAsUpIndicator(R.mipmap.ic_launcher);//channge the icon
+        mActionBarDrawerToggle.syncState();//show the default icon and sync the DrawerToggle state
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
-        mDrawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.green));
+        mDrawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.green));//set background color for status bar
 
     }
 
