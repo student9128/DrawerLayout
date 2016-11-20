@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.tool_bar);
+        mToolbar.setTitle("Kevin");
+        mToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//show back button and make it enabled
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -32,14 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mActionBarDrawerToggle.setHomeAsUpIndicator(R.mipmap.ic_launcher);//改变图标
         mActionBarDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
-        mDrawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this,R.color.green));
+        mDrawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.green));
 
     }
 
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.btn_next_page){
-            startActivity(new Intent(MainActivity.this,NextActivity.class));
+        if (view.getId() == R.id.btn_next_page) {
+            startActivity(new Intent(MainActivity.this, NextActivity.class));
         }
     }
 }
